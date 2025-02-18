@@ -26,6 +26,7 @@
     --sh-keyword: #f47067;
     --sh-string: #0fa295;
   }
+
   html {
     color-scheme: dark;
   }
@@ -58,7 +59,7 @@ html {
   content: '#';
 }
 
-.prose *:hover > .anchor {
+.prose *:hover>.anchor {
   @apply visible;
 }
 
@@ -95,7 +96,7 @@ h4 {
   @apply font-medium;
 }
 
-.prose > :first-child {
+.prose> :first-child {
   /* Override removing top margin, causing layout shift */
   margin-top: 1.25em !important;
   margin-bottom: 1.25em !important;
@@ -106,8 +107,10 @@ pre::-webkit-scrollbar {
 }
 
 pre {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* Remove Safari input shadow on mobile */
@@ -130,7 +133,7 @@ table {
   white-space: nowrap;
 }
 
-.prose .callout > p {
+.prose .callout>p {
   margin: 0 !important;
 }
 
@@ -216,6 +219,7 @@ table {
     opacity: 0;
     transform: scale(0.8);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -227,6 +231,7 @@ table {
     opacity: 1;
     transform: scale(1);
   }
+
   100% {
     opacity: 0;
     transform: scale(0.8);
@@ -237,6 +242,7 @@ table {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0.15;
   }
@@ -251,15 +257,14 @@ table {
 }
 
 .transform-none-on-hover:hover {
-  transform: perspective(1200px) translateX(0px) translateY(-10px) scale(1)
-    rotate(0deg) rotateX(0deg) rotateY(0deg) skewX(0deg) skewY(0deg)
-    translateZ(0px) !important;
+  transform: perspective(1200px) translateX(0px) translateY(-10px) scale(1) rotate(0deg) rotateX(0deg) rotateY(0deg) skewX(0deg) skewY(0deg) translateZ(0px) !important;
 }
 
 @keyframes blurFadeIn {
   0% {
     filter: blur(10px) brightness(180%);
   }
+
   100% {
     filter: blur(0px) brightness(100%);
   }

@@ -3,8 +3,7 @@
 import { useEffect, useState, useRef } from 'react'
 import TopBlurLayer from 'app/components/top-blur-layer'
 import TopCommitBar from 'app/components/top-commit-bar'
-import { AnimatePresence } from 'framer-motion'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { EMOJI_MAP } from '@/utils/emoji'
 
@@ -110,7 +109,7 @@ export default function Form() {
       </AnimatePresence>
       <form className="relative">
         <section className="relative">
-          <div className="flex flex-col gap-4 w-full">
+          <div className="flex flex-col gap-2 w-full">
             <div className="flex flex-col md:flex-row gap-2 w-full">
               <input
                 aria-label="Your name"
@@ -120,7 +119,7 @@ export default function Form() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="flex-1 w-full md:w-auto rounded-lg border-neutral-300 bg-neutral-100 py-3 pl-4 text-[14px] text-neutral-900 placeholder-neutral-400 outline-none dark:bg-neutral-800 dark:text-neutral-100"
+                className="flex-1 w-full md:w-auto rounded-lg border-neutral-300 bg-neutral-100 py-2 pl-4 text-[14px] text-neutral-900 placeholder-neutral-400 outline-none dark:bg-neutral-800 dark:text-neutral-100"
               />
               <input
                 aria-label="Your email"
@@ -130,7 +129,7 @@ export default function Form() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 w-full md:w-auto rounded-lg border-neutral-300 bg-neutral-100 py-3 pl-4 text-[14px] text-neutral-900 placeholder-neutral-400 outline-none dark:bg-neutral-800 dark:text-neutral-100"
+                className="flex-1 w-full md:w-auto rounded-lg border-neutral-300 bg-neutral-100 py-2 pl-4 text-[14px] text-neutral-900 placeholder-neutral-400 outline-none dark:bg-neutral-800 dark:text-neutral-100"
               />
             </div>
             <div className="relative w-full">
@@ -153,15 +152,11 @@ export default function Form() {
                 required
                 value={entry}
                 onChange={(e) => setEntry(e.target.value)}
-                className="w-full min-h-[120px] rounded-lg border-neutral-300 bg-neutral-100 py-4 pl-4 pr-20 text-[14px] text-neutral-900 placeholder-neutral-400 outline-none dark:bg-neutral-800 dark:text-neutral-100"
+                className="w-full min-h-[80px] rounded-lg border-neutral-300 bg-neutral-100 py-4 pl-4 pr-20 text-[14px] text-neutral-900 placeholder-neutral-400 outline-none dark:bg-neutral-800 dark:text-neutral-100"
               />
               {showEmojiPicker && (
                 <motion.div
                   className="absolute z-50 w-full max-w-[300px] rounded-xl bg-neutral-100/80 p-2 shadow-lg backdrop-blur-lg dark:bg-neutral-800/80"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ duration: 0.2, ease: 'easeOut' }}
                   style={{
                     top: 'calc(100% + 8px)',
                     right: '0',
@@ -169,24 +164,35 @@ export default function Form() {
                     overflowY: 'auto'
                   }}
                 >
-                  <div className="grid grid-cols-8 gap-1 md:grid-cols-10">
-                    {paginatedEmojis.map(([code, path]) => (
-                      <button
-                        key={code}
-                        onClick={() => insertEmoji(code)}
-                        className="group relative h-8 w-8 rounded-md hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 transition-colors"
-                      >
-                        <Image
-                          src={path}
-                          alt={code}
-                          width={32}
-                          height={32}
-                          className="h-6 w-6 object-contain transition-transform group-hover:scale-125"
-                          unoptimized
-                        />
-                      </button>
-                    ))}
-                  </div>
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentPage}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div className="grid grid-cols-8 gap-1 md:grid-cols-10">
+                        {paginatedEmojis.map(([code, path]) => (
+                          <button
+                            key={code}
+                            onClick={() => insertEmoji(code)}
+                            className="group relative h-8 w-8 rounded-md hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 transition-colors"
+                          >
+                            <Image
+                              src={path}
+                              alt={code}
+                              width={32}
+                              height={32}
+                              className="h-6 w-6 object-contain transition-transform group-hover:scale-125"
+                              unoptimized
+                            />
+                          </button>
+                        ))}
+                      </div>
+                    </motion.div>
+                  </AnimatePresence>
+                  
                   <div className="mt-2 flex items-center justify-between px-2 text-xs text-neutral-500 dark:text-neutral-400">
                     <button
                       onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
