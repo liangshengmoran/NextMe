@@ -30,7 +30,7 @@ Here is a minimalist blog that gives you full control to customize your blog."
 
 ## Deploy your own
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhamster1963%2Fnextme&env=SITE_URL,SITE_AUTHOR)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F清韵%2Fnextme&env=SITE_URL,SITE_AUTHOR)
 
 - Cloudflare Pages - Framework preset - Next.js(Static HTML Export)
 

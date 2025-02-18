@@ -4,7 +4,9 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "start": "npx serve@latest out"
+    "start": "npx serve@latest out",
+    "predev": "bun run scripts/generate-emoji-config.ts",
+    "prebuild": "bun run scripts/generate-emoji-config.ts"
   },
   "prettier": {
     "plugins": [

@@ -7,6 +7,8 @@ import Footer from './footer'
 import NewBlurLayer from './components/blur-layer'
 import type { Viewport } from 'next'
 import Nav from './components/nav'
+import { EMOJI_MAP } from '@/utils/emoji'
+import { CurrentUserProvider } from '@/contexts/CurrentUserContext'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -18,15 +20,15 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.SITE_URL || 'https://nextjs.org'),
   title: {
-    default: 'Hamster1963',
-    template: '%s | Hamster1963',
+    default: '清韵',
+    template: '%s | 清韵',
   },
   description: 'Developer, writer, and creator.',
   openGraph: {
-    title: 'Hamster1963',
+    title: '清韵',
     description: 'Developer, writer, and creator.',
     url: process.env.SITE_URL,
-    siteName: 'Hamster1963',
+    siteName: '清韵',
     locale: 'zh_CN',
     type: 'website',
   },
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: 'Hamster1963',
+    title: '清韵',
     card: 'summary_large_image',
   },
   alternates: {
@@ -69,9 +71,22 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
+      <head>
+        {/* 在现有head内容中添加 */}
+        {Object.values(EMOJI_MAP).map((path) => (
+          <link
+            key={path}
+            rel="preload"
+            href={path}
+            as="image"
+          />
+        ))}
+      </head>
       <body className="relative mx-4 mb-28 mt-8 flex max-w-2xl flex-col antialiased sm:mx-auto md:flex-row">
         <main className="mt-6 flex min-w-0 flex-auto flex-col px-2 md:px-0">
-          {children}
+          <CurrentUserProvider>
+            {children}
+          </CurrentUserProvider>
           <Nav />
           <Footer />
           <NewBlurLayer />

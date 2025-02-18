@@ -5,7 +5,7 @@ export const dynamic = 'force-static'
 
 export async function GET() {
   const feed = new RSS({
-    title: process.env.SITE_AUTHOR || 'Hamster1963',
+    title: process.env.SITE_AUTHOR || '清韵',
     description: 'Developer, guitarist, and creator.',
     site_url: process.env.SITE_URL!,
     feed_url: process.env.SITE_URL + '/rss',
@@ -34,7 +34,7 @@ export async function GET() {
       description: post.metadata.ai ? post.metadata.ai : post.metadata.summary,
       url: process.env.SITE_URL + `/blog/${post.slug}`,
       date: post.metadata.publishedAt,
-      author: process.env.SITE_AUTHOR || 'Hamster1963',
+      author: process.env.SITE_AUTHOR || '清韵',
       enclosure: {
         url: post.metadata.rssImage
           ? process.env.SITE_URL + post.metadata.rssImage

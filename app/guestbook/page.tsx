@@ -13,8 +13,10 @@ export default function GuestbookPage() {
       <p className="prose prose-neutral mb-2 text-sm dark:prose-invert">
         Some text about the guestbook.
       </p>
-      <GuestbookForm />
-      <GuestbookEntries />
+      <Form />
+      <div className="mt-8">
+        <GuestbookEntries />
+      </div>
     </section>
   )
 }

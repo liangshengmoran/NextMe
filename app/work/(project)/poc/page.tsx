@@ -89,19 +89,19 @@ export default function Page() {
       <Image
         placeholder="blur"
         className={'mt-10 md:mt-40 md:scale-150'}
-        alt={'Hamster1963'}
+        alt={'清韵'}
         src={PocOne}
       />
       <Image
         placeholder="blur"
         className={'mt-5 md:mt-48 md:scale-150'}
-        alt={'Hamster1963'}
+        alt={'清韵'}
         src={PocTwo}
       />
       <Image
         placeholder="blur"
         className={'mt-5 md:mb-24 md:mt-48 md:scale-150'}
-        alt={'Hamster1963'}
+        alt={'清韵'}
         src={PocThree}
       />
     </section>

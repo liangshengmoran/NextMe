@@ -142,7 +142,7 @@ export default function BlogListClient({
                   >
                     <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/5 dark:ring-white/5" />
                     <Image
-                      alt={'Hamster1963'}
+                      alt={'清韵'}
                       className="rounded-xl object-cover transition-all duration-500 ease-linear dark:brightness-75 dark:hover:brightness-100"
                       src={post.metadata.image}
                       width={

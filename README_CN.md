@@ -27,7 +27,7 @@
 
 ## 部署你的网站
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhamster1963%2Fnextme&env=SITE_URL,SITE_AUTHOR)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F清韵%2Fnextme&env=SITE_URL,SITE_AUTHOR)
 
 - Cloudflare Pages - 框架预设 - Next.js(Static HTML Export)
 

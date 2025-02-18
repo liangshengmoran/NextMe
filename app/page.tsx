@@ -13,7 +13,7 @@ export default async function Page() {
     <section>
       <section className="sm:px-28 sm:pt-8">
         <Image
-          alt={'Hamster1963'}
+          alt={'清韵'}
           src={avatar}
           height={64}
           width={64}
@@ -23,13 +23,13 @@ export default async function Page() {
           priority
         />
         <h1 className="mb-1 text-xl font-medium tracking-tighter">
-          Hamster1963
+          清韵
         </h1>
         <p className="prose prose-neutral text-sm dark:prose-invert">
           Developer, guitarist, and creator.
         </p>
         <p className={'mb-6 pt-10 text-lg font-medium tracking-tight'}>
-          👋 Hi, I'm Hamster1963.
+          👋 Hi, I'm 清韵.
           <br />
           Love to write code and write articles.
           <br />
@@ -38,7 +38,7 @@ export default async function Page() {
         </p>
         <NowPlayingInit />
         <div className={'mt-6 flex items-center'}>
-          <Link href="https://github.com/hamster1963" target="_blank">
+          <Link href="https://github.com/liangshengmoran" target="_blank">
             <button
               className={
                 'mr-4 flex items-center justify-center rounded-xl border-[0.5px] border-neutral-200 p-2 text-xs font-medium shadow-[0_2px_2px_rgba(0,0,0,0.04)] transition-all duration-300 hover:bg-stone-100 hover:shadow-none dark:border-neutral-700 dark:bg-neutral-700/20 dark:hover:bg-neutral-900/20'

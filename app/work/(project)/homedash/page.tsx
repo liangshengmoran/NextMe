@@ -91,25 +91,25 @@ export default function Page() {
       <Image
         placeholder="blur"
         className={'mt-10 md:mt-40 md:scale-150'}
-        alt={'Hamster1963'}
+        alt={'清韵'}
         src={homedashOne}
       />
       <Image
         placeholder="blur"
         className={'mt-5 md:mt-72 md:scale-150'}
-        alt={'Hamster1963'}
+        alt={'清韵'}
         src={homedashTwo}
       />
       <Image
         placeholder="blur"
         className={'mt-5 md:mt-72 md:scale-150'}
-        alt={'Hamster1963'}
+        alt={'清韵'}
         src={homedashThree}
       />
       <Image
         placeholder="blur"
         className={'mt-5 md:mb-24 md:mt-72 md:scale-150'}
-        alt={'Hamster1963'}
+        alt={'清韵'}
         src={homedashFour}
       />
     </section>

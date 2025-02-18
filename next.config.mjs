@@ -8,6 +8,9 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
+    domains: ['yourdomain.com'],
+    path: '/_next/image',
+    loader: 'default',
   },
   logging: {
     fetches: {

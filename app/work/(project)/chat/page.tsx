@@ -20,10 +20,10 @@ export default function Page() {
         <p>一个极简的AI对话页面，使用 Next.js 和 TypeScript 开发。</p>
         <blockquote className="my-6 border-l-2 pl-2 text-sm">
           <a
-            href="https://github.com/hamster1963/Next-Mini-Chat"
+            href="https://github.com/liangshengmoran/Next-Mini-Chat"
             target={'_blank'}
           >
-            https://github.com/hamster1963/Next-Mini-Chat
+            https://github.com/liangshengmoran/Next-Mini-Chat
           </a>
         </blockquote>
         <div
@@ -57,13 +57,13 @@ export default function Page() {
       <Image
         placeholder="blur"
         className={'mt-10 md:mt-40 md:scale-150'}
-        alt={'Hamster1963'}
+        alt={'清韵'}
         src={ChatOne}
       />
       <Image
         placeholder="blur"
         className={'mt-5 md:mb-56 md:mt-96 md:scale-150'}
-        alt={'Hamster1963'}
+        alt={'清韵'}
         src={ChatTwo}
       />
     </section>
